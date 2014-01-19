@@ -334,10 +334,12 @@ public:
     
     void drawTrace()
     {
-        if (m_fingerTrace.size() > 20) {
+        if (m_fingerTrace.size() > 25) {
             m_fingerTrace.pop_back();
         }
         m_fingerTrace.push_front(m_lastFrameFingers);
+        
+        glBegin(GL_LINES);
         
         for (std::list<std::list<Leap::Vector>>::iterator it = m_fingerTrace.begin(); it != m_fingerTrace.end(); it++)
         {
@@ -345,7 +347,9 @@ public:
             {
                 Leap::Vector vStartPos = m_mtxFrameTransform.transformPoint( *jt * m_fFrameScale );
                 
-                {
+                glVertex3fv(vStartPos.toFloatPointer());
+                
+                /*{
                     LeapUtilGL::GLMatrixScope matrixScope;
                     
                     glTranslatef( vStartPos.x, vStartPos.y, vStartPos.z );
@@ -353,9 +357,11 @@ public:
                     glScalef( 0.01f, 0.01f, 0.01f );
                     
                     LeapUtilGL::drawSphere( LeapUtilGL::kStyle_Solid );
-                }
+                }*/
             }
         }
+        
+        glEnd();
     }
 
     /// affects model view matrix.  needs to be inside a glPush/glPop matrix block!
