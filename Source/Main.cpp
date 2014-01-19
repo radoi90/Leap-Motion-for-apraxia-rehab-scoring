@@ -11,6 +11,7 @@
 #include "LeapUtilGL.h"
 #include <cctype>
 #include <list>
+#include <map>
 
 class FingerVisualizerWindow;
 class OpenGLCanvas;
@@ -334,34 +335,20 @@ public:
     
     void drawTrace()
     {
-        if (m_fingerTrace.size() > 25) {
-            m_fingerTrace.pop_back();
-        }
-        m_fingerTrace.push_front(m_lastFrameFingers);
         
-        glBegin(GL_LINES);
-        
-        for (std::list<std::list<Leap::Vector>>::iterator it = m_fingerTrace.begin(); it != m_fingerTrace.end(); it++)
+        for (std::map<int32_t, std::list<Leap::Vector>>::iterator it = m_fingerTrace.begin(); it != m_fingerTrace.end(); it++)
         {
-            for (std::list<Leap::Vector>::iterator jt = (*it).begin(); jt != (*it).end(); jt++)
+            glBegin(GL_LINES);
+            
+            for (std::list<Leap::Vector>::iterator jt = (*it).second.begin(); jt != (*it).second.end(); jt++)
             {
                 Leap::Vector vStartPos = m_mtxFrameTransform.transformPoint( *jt * m_fFrameScale );
                 
                 glVertex3fv(vStartPos.toFloatPointer());
-                
-                /*{
-                    LeapUtilGL::GLMatrixScope matrixScope;
-                    
-                    glTranslatef( vStartPos.x, vStartPos.y, vStartPos.z );
-                    
-                    glScalef( 0.01f, 0.01f, 0.01f );
-                    
-                    LeapUtilGL::drawSphere( LeapUtilGL::kStyle_Solid );
-                }*/
             }
+            
+            glEnd();
         }
-        
-        glEnd();
     }
 
     /// affects model view matrix.  needs to be inside a glPush/glPop matrix block!
@@ -465,13 +452,13 @@ public:
             }
         }
         
-        m_lastFrameFingers.clear();
-        
         // draw fingers/tools as lines with sphere at the tip.
         if (hands.count() > 0) {
             drawFingers( hands[0] );
+            addToTrace( hands[0] );
         }
         
+        //updateTrace();
         drawTrace();
 
         {
@@ -479,6 +466,30 @@ public:
 
           // draw the text overlay
           renderOpenGL2D();
+        }
+    }
+    
+    void addToTrace ( Leap::Hand hand )
+    {
+        const Leap::FingerList& fingers = hand.fingers();
+        
+        for ( size_t i = 0, e = fingers.count(); i < e; i++ )
+        {
+            const Leap::Finger& finger = fingers[i];
+            m_fingerTrace[finger.id()].push_back(finger.stabilizedTipPosition());
+        }
+        
+    }
+    
+    void updateTrace() {
+        for (std::map<int32_t, std::list<Leap::Vector>>::iterator it = m_fingerTrace.begin(); it != m_fingerTrace.end(); it++)
+        {
+            if (!(*it).second.empty()) {
+                (*it).second.pop_front();
+            }
+            
+            //if ((*it).second.empty())
+              //  m_fingerTrace.erase(it);
         }
     }
 
@@ -518,7 +529,6 @@ public:
                 LeapUtilGL::drawSphere( LeapUtilGL::kStyle_Solid );
             }
             
-            m_lastFrameFingers.push_front(finger.stabilizedTipPosition());
         }
         
     }
@@ -610,8 +620,7 @@ private:
     CriticalSection             m_renderMutex;
     bool                        m_bShowHelp;
     bool                        m_bPaused;
-    std::list<std::list<Leap::Vector>>    m_fingerTrace;
-    std::list<Leap::Vector> m_lastFrameFingers;
+    std::map<int32_t, std::list<Leap::Vector>>    m_fingerTrace;
 
     enum  { kNumColors = 256 };
     Leap::Vector            m_avColors[kNumColors];
