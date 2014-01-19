@@ -141,8 +141,8 @@ public:
 
         m_strPrompt = "Press 'h' for help";
         
-        std::list<std::list<Leap::Vector>> m_fingerTrace;
-        std::list<Leap::Vector> m_lastFrameFingers;
+        std::map<int32_t, std::list<Leap::Vector>> m_fingerTrace;
+        std::map<int32_t, int64_t> lastUpdate;
     }
 
     ~OpenGLCanvas()
@@ -336,18 +336,40 @@ public:
     void drawTrace()
     {
         
-        for (std::map<int32_t, std::list<Leap::Vector>>::iterator it = m_fingerTrace.begin(); it != m_fingerTrace.end(); it++)
+        LeapUtilGL::GLAttribScope colorScope( GL_CURRENT_BIT | GL_LINE_BIT );
+        
+        glLineWidth( 5.0f );
+        
+        std::map<int32_t, std::list<Leap::Vector>>::iterator it = m_fingerTrace.begin();
+        while( it != m_fingerTrace.end())
         {
-            glBegin(GL_LINES);
+            bool isEmpty = true;
+            
+            const uint32_t colorIndex = static_cast<uint32_t>((*it).first) % kNumColors;
+            glColor3fv( m_avColors[colorIndex].toFloatPointer() );
+            
+            glBegin(GL_LINE_STRIP);
             
             for (std::list<Leap::Vector>::iterator jt = (*it).second.begin(); jt != (*it).second.end(); jt++)
             {
-                Leap::Vector vStartPos = m_mtxFrameTransform.transformPoint( *jt * m_fFrameScale );
-                
-                glVertex3fv(vStartPos.toFloatPointer());
+                if ( ((*jt).x != 1000) || ((*jt).y != 1000) || ((*jt).z != 1000))
+                {
+                    isEmpty = false;
+                    Leap::Vector vStartPos = m_mtxFrameTransform.transformPoint( *jt * m_fFrameScale );
+                    
+                    glVertex3fv(vStartPos.toFloatPointer());
+                }
             }
             
             glEnd();
+            
+            if (isEmpty) {
+                std::map<int32_t, std::list<Leap::Vector>>::iterator jt = it;
+                it++;
+                m_fingerTrace.erase(jt);
+            } else {
+                it++;
+            }
         }
     }
 
@@ -452,13 +474,15 @@ public:
             }
         }
         
+        addToTrace();
+        
         // draw fingers/tools as lines with sphere at the tip.
         if (hands.count() > 0) {
             drawFingers( hands[0] );
             addToTrace( hands[0] );
         }
         
-        //updateTrace();
+        updateTrace();
         drawTrace();
 
         {
@@ -469,6 +493,14 @@ public:
         }
     }
     
+    void addToTrace ()
+    {
+        for (std::map<int32_t, std::list<Leap::Vector>>::iterator it = m_fingerTrace.begin(); it != m_fingerTrace.end(); it++)
+        {
+            (*it).second.push_back(Leap::Vector(1000,1000,1000));
+        }
+    }
+    
     void addToTrace ( Leap::Hand hand )
     {
         const Leap::FingerList& fingers = hand.fingers();
@@ -476,20 +508,19 @@ public:
         for ( size_t i = 0, e = fingers.count(); i < e; i++ )
         {
             const Leap::Finger& finger = fingers[i];
+            if (!m_fingerTrace[finger.id()].empty()) {
+                m_fingerTrace[finger.id()].pop_back();
+            }
             m_fingerTrace[finger.id()].push_back(finger.stabilizedTipPosition());
         }
-        
     }
     
     void updateTrace() {
         for (std::map<int32_t, std::list<Leap::Vector>>::iterator it = m_fingerTrace.begin(); it != m_fingerTrace.end(); it++)
         {
-            if (!(*it).second.empty()) {
+            if ((*it).second.size() > 20) {
                 (*it).second.pop_front();
             }
-            
-            //if ((*it).second.empty())
-              //  m_fingerTrace.erase(it);
         }
     }
 
@@ -620,8 +651,8 @@ private:
     CriticalSection             m_renderMutex;
     bool                        m_bShowHelp;
     bool                        m_bPaused;
-    std::map<int32_t, std::list<Leap::Vector>>    m_fingerTrace;
-
+    std::map<int32_t, std::list<Leap::Vector>> m_fingerTrace;
+    
     enum  { kNumColors = 256 };
     Leap::Vector            m_avColors[kNumColors];
 };
