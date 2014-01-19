@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "4E8DE5046D825648CBEBC3F9"
-               BuildableName = "FingerVisualizer.app"
-               BlueprintName = "FingerVisualizer"
-               ReferencedContainer = "container:FingerVisualizer.xcodeproj">
+               BuildableName = "Leapraxia.app"
+               BlueprintName = "Leapraxia"
+               ReferencedContainer = "container:Leapraxia.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "4E8DE5046D825648CBEBC3F9"
-            BuildableName = "FingerVisualizer.app"
-            BlueprintName = "FingerVisualizer"
-            ReferencedContainer = "container:FingerVisualizer.xcodeproj">
+            BuildableName = "Leapraxia.app"
+            BlueprintName = "Leapraxia"
+            ReferencedContainer = "container:Leapraxia.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </TestAction>
@@ -52,9 +52,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "4E8DE5046D825648CBEBC3F9"
-            BuildableName = "FingerVisualizer.app"
-            BlueprintName = "FingerVisualizer"
-            ReferencedContainer = "container:FingerVisualizer.xcodeproj">
+            BuildableName = "Leapraxia.app"
+            BlueprintName = "Leapraxia"
+            ReferencedContainer = "container:Leapraxia.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -70,9 +70,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "4E8DE5046D825648CBEBC3F9"
-            BuildableName = "FingerVisualizer.app"
-            BlueprintName = "FingerVisualizer"
-            ReferencedContainer = "container:FingerVisualizer.xcodeproj">
+            BuildableName = "Leapraxia.app"
+            BlueprintName = "Leapraxia"
+            ReferencedContainer = "container:Leapraxia.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

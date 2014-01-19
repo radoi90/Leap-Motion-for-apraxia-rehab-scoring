@@ -69,7 +69,7 @@
 		0D4AC6529A8E4D78B91583E5 /* juce_DrawableImage.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = juce_DrawableImage.cpp; path = ../../../ThirdParty/JUCE/modules/juce_gui_basics/drawables/juce_DrawableImage.cpp; sourceTree = SOURCE_ROOT; };
 		0E62A225067A817F74303098 /* juce_FilePreviewComponent.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = juce_FilePreviewComponent.h; path = ../../../ThirdParty/JUCE/modules/juce_gui_basics/filebrowser/juce_FilePreviewComponent.h; sourceTree = SOURCE_ROOT; };
 		0E758FA9F05874383C5DE01D /* juce_MouseInputSource.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = juce_MouseInputSource.h; path = ../../../ThirdParty/JUCE/modules/juce_gui_basics/mouse/juce_MouseInputSource.h; sourceTree = SOURCE_ROOT; };
-		0E86D83CE6CA8A91FD16AF09 /* FingerVisualizer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FingerVisualizer.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		0E86D83CE6CA8A91FD16AF09 /* Leapraxia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Leapraxia.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1097C7D52BF0682EDEC1B2B8 /* juce_StringArray.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = juce_StringArray.h; path = ../../../ThirdParty/JUCE/modules/juce_core/text/juce_StringArray.h; sourceTree = SOURCE_ROOT; };
 		10B2FB7294BFAAB93838A70E /* juce_ApplicationCommandTarget.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = juce_ApplicationCommandTarget.h; path = ../../../ThirdParty/JUCE/modules/juce_gui_basics/commands/juce_ApplicationCommandTarget.h; sourceTree = SOURCE_ROOT; };
 		117B351E809777CA1B11E693 /* juce_Random.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = juce_Random.h; path = ../../../ThirdParty/JUCE/modules/juce_core/maths/juce_Random.h; sourceTree = SOURCE_ROOT; };
@@ -711,13 +711,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		04E028C772A53A58D5900586 /* FingerVisualizer */ = {
+		04E028C772A53A58D5900586 /* Leapraxia */ = {
 			isa = PBXGroup;
 			children = (
 				11E0B107A997F71C9FA2E9AC /* LeapUtil */,
 				B75D3D72C9598E4CBF7A07E7 /* Source */,
 			);
-			name = FingerVisualizer;
+			name = Leapraxia;
 			sourceTree = "<group>";
 		};
 		0DC3A7EBFA6210FA502C1A03 /* embedding */ = {
@@ -927,7 +927,7 @@
 		29361C524B90D8DFA9833054 /* Source */ = {
 			isa = PBXGroup;
 			children = (
-				04E028C772A53A58D5900586 /* FingerVisualizer */,
+				04E028C772A53A58D5900586 /* Leapraxia */,
 				5FB64998015966412205DAA6 /* Juce Modules */,
 				83FECF68A8922C9E32CEE0C9 /* Juce Library Code */,
 				4D45CFAADA70D25C5BD3F4A8 /* Resources */,
@@ -1414,7 +1414,7 @@
 		73509AE993CCA69CA4C819E9 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				0E86D83CE6CA8A91FD16AF09 /* FingerVisualizer.app */,
+				0E86D83CE6CA8A91FD16AF09 /* Leapraxia.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -1978,9 +1978,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		4E8DE5046D825648CBEBC3F9 /* FingerVisualizer */ = {
+		4E8DE5046D825648CBEBC3F9 /* Leapraxia */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 66BB7177652BF36EFD827110 /* Build configuration list for PBXNativeTarget "FingerVisualizer" */;
+			buildConfigurationList = 66BB7177652BF36EFD827110 /* Build configuration list for PBXNativeTarget "Leapraxia" */;
 			buildPhases = (
 				2019AA4735F37EC1E27DB231 /* Resources */,
 				6C3A5CAAE71C0E082FD23CD9 /* Sources */,
@@ -1991,10 +1991,10 @@
 			);
 			dependencies = (
 			);
-			name = FingerVisualizer;
+			name = Leapraxia;
 			productInstallPath = "$(HOME)/Applications";
 			productName = FingerVisualizer;
-			productReference = 0E86D83CE6CA8A91FD16AF09 /* FingerVisualizer.app */;
+			productReference = 0E86D83CE6CA8A91FD16AF09 /* Leapraxia.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -2005,7 +2005,7 @@
 			attributes = {
 				LastUpgradeCheck = 0500;
 			};
-			buildConfigurationList = A2B98CA28C3602E740D16B8B /* Build configuration list for PBXProject "FingerVisualizer" */;
+			buildConfigurationList = A2B98CA28C3602E740D16B8B /* Build configuration list for PBXProject "Leapraxia" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -2016,7 +2016,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				4E8DE5046D825648CBEBC3F9 /* FingerVisualizer */,
+				4E8DE5046D825648CBEBC3F9 /* Leapraxia */,
 			);
 		};
 /* End PBXProject section */
@@ -2082,7 +2082,7 @@
 				GCC_WARN_TYPECHECK_CALLS_TO_PRINTF = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				PRODUCT_NAME = FingerVisualizer;
+				PRODUCT_NAME = Leapraxia;
 				WARNING_CFLAGS = "-Wreorder";
 				ZERO_LINK = NO;
 			};
@@ -2121,6 +2121,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.6;
 				MACOSX_DEPLOYMENT_TARGET_ppc = 10.4;
 				OTHER_LDFLAGS = "-lLeap";
+				PRODUCT_NAME = Leapraxia;
 				SDKROOT_ppc = macosx10.5;
 			};
 			name = Debug;
@@ -2158,6 +2159,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.6;
 				MACOSX_DEPLOYMENT_TARGET_ppc = 10.4;
 				OTHER_LDFLAGS = "-lLeap";
+				PRODUCT_NAME = Leapraxia;
 				SDKROOT_ppc = macosx10.5;
 			};
 			name = Release;
@@ -2176,7 +2178,7 @@
 				GCC_WARN_NON_VIRTUAL_DESTRUCTOR = YES;
 				GCC_WARN_TYPECHECK_CALLS_TO_PRINTF = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				PRODUCT_NAME = FingerVisualizer;
+				PRODUCT_NAME = Leapraxia;
 				WARNING_CFLAGS = "-Wreorder";
 				ZERO_LINK = NO;
 			};
@@ -2185,7 +2187,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		66BB7177652BF36EFD827110 /* Build configuration list for PBXNativeTarget "FingerVisualizer" */ = {
+		66BB7177652BF36EFD827110 /* Build configuration list for PBXNativeTarget "Leapraxia" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				5DDCEEA4A2EFAB003C98670E /* Debug */,
@@ -2194,7 +2196,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;
 		};
-		A2B98CA28C3602E740D16B8B /* Build configuration list for PBXProject "FingerVisualizer" */ = {
+		A2B98CA28C3602E740D16B8B /* Build configuration list for PBXProject "Leapraxia" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				5662E2481B865CA646887427 /* Debug */,

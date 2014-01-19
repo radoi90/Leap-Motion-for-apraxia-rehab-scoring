@@ -30,7 +30,7 @@
 
 namespace ProjectInfo
 {
-    const char* const  projectName    = "FingerVisualizer";
+    const char* const  projectName    = "Leapraxia";
     const char* const  versionString  = "1.0.0";
     const int          versionNumber  = 0x10000;
 }
