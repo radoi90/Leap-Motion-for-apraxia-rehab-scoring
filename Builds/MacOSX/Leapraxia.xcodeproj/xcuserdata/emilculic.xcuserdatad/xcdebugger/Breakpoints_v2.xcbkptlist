@@ -6,77 +6,45 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "No"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "../../Source/Main.cpp"
-            timestampString = "411835944.278329"
+            filePath = "../../../../LeapSDK/util/LeapUtilGL.cpp"
+            timestampString = "411922262.279185"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "338"
-            endingLineNumber = "338"
-            landmarkName = "drawTrace()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "../../Source/Main.cpp"
-            timestampString = "411833988.153968"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "268"
-            endingLineNumber = "268"
-            landmarkName = "renderOpenGL2D()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "../../Source/Main.cpp"
-            timestampString = "411843735.88282"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "344"
-            endingLineNumber = "344"
-            landmarkName = "drawTrace()"
+            startingLineNumber = "76"
+            endingLineNumber = "76"
+            landmarkName = "drawGrid( ePlane plane, unsigned int horizSubdivs, unsigned int vertSubdivs )"
             landmarkType = "7">
             <Locations>
                <Location
-                  shouldBeEnabled = "No"
+                  shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "OpenGLCanvas::drawTrace()"
+                  symbolName = "LeapUtilGL::drawGrid(LeapUtilGL::ePlane, unsigned int, unsigned int)"
                   moduleName = "Leapraxia"
-                  urlString = "file:///Users/emilculic/Documents/4th%20year%20project/Examples/Leapraxia/Source/Main.cpp"
-                  timestampString = "411843266.712937"
+                  urlString = "file:///Users/emilculic/Documents/4th%20year%20project/LeapSDK/util/LeapUtilGL.cpp"
+                  timestampString = "411922267.889023"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "343"
-                  endingLineNumber = "343"
-                  offsetFromSymbolStart = "71">
+                  startingLineNumber = "76"
+                  endingLineNumber = "76"
+                  offsetFromSymbolStart = "276">
                </Location>
                <Location
-                  shouldBeEnabled = "No"
+                  shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "OpenGLCanvas::drawTrace()"
+                  symbolName = "LeapUtilGL::drawGrid(LeapUtilGL::ePlane, unsigned int, unsigned int)"
                   moduleName = "Leapraxia"
-                  urlString = "file:///Users/emilculic/Documents/4th%20year%20project/Examples/Leapraxia/Source/Main.cpp"
-                  timestampString = "411843266.713208"
+                  urlString = "file:///Users/emilculic/Documents/4th%20year%20project/LeapSDK/util/LeapUtilGL.cpp"
+                  timestampString = "411922267.889395"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "343"
-                  endingLineNumber = "343"
-                  offsetFromSymbolStart = "960">
+                  startingLineNumber = "76"
+                  endingLineNumber = "76"
+                  offsetFromSymbolStart = "357">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -84,78 +52,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "No"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "../../Source/Main.cpp"
-            timestampString = "411843735.88282"
+            filePath = "../../../../LeapSDK/util/LeapUtilGL.cpp"
+            timestampString = "411922263.617135"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "346"
-            endingLineNumber = "346"
-            landmarkName = "drawTrace()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "../../Source/Main.cpp"
-            timestampString = "411843735.88282"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "520"
-            endingLineNumber = "520"
-            landmarkName = "updateTrace()"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "OpenGLCanvas::updateTrace()"
-                  moduleName = "Leapraxia"
-                  urlString = "file:///Users/emilculic/Documents/4th%20year%20project/Examples/Leapraxia/Source/Main.cpp"
-                  timestampString = "411843266.713744"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "515"
-                  endingLineNumber = "515"
-                  offsetFromSymbolStart = "16">
-               </Location>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "OpenGLCanvas::updateTrace()"
-                  moduleName = "Leapraxia"
-                  urlString = "file:///Users/emilculic/Documents/4th%20year%20project/Examples/Leapraxia/Source/Main.cpp"
-                  timestampString = "411843266.713968"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "515"
-                  endingLineNumber = "515"
-                  offsetFromSymbolStart = "161">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "../../Source/Main.cpp"
-            timestampString = "411843735.88282"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "523"
-            endingLineNumber = "523"
-            landmarkName = "updateTrace()"
+            startingLineNumber = "78"
+            endingLineNumber = "78"
+            landmarkName = "drawGrid( ePlane plane, unsigned int horizSubdivs, unsigned int vertSubdivs )"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -165,13 +71,45 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "../../Source/Main.cpp"
-            timestampString = "411843735.88282"
+            filePath = "../../../../LeapSDK/util/LeapUtilGL.cpp"
+            timestampString = "411922264.225078"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "369"
-            endingLineNumber = "369"
-            landmarkName = "drawTrace()"
+            startingLineNumber = "79"
+            endingLineNumber = "79"
+            landmarkName = "drawGrid( ePlane plane, unsigned int horizSubdivs, unsigned int vertSubdivs )"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../../../../LeapSDK/util/LeapUtilGL.cpp"
+            timestampString = "411922265.579372"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "84"
+            endingLineNumber = "84"
+            landmarkName = "drawGrid( ePlane plane, unsigned int horizSubdivs, unsigned int vertSubdivs )"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../../../../LeapSDK/util/LeapUtilGL.cpp"
+            timestampString = "411922266.133099"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "85"
+            endingLineNumber = "85"
+            landmarkName = "drawGrid( ePlane plane, unsigned int horizSubdivs, unsigned int vertSubdivs )"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

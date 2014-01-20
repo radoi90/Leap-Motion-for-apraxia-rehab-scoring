@@ -451,26 +451,53 @@ public:
         {
             LeapUtilGL::GLAttribScope colorScope(GL_CURRENT_BIT);
 
-            glColor3f( 0, 0, 1 );
-
             {
+                glColor3f( 0.929, 0.929, 0.929 );
+                
                 LeapUtilGL::GLMatrixScope gridMatrixScope;
 
                 glTranslatef( 0, 0.0f, -1.5f );
 
-                glScalef( 3, 3, 3 );
+                glScalef( 5, 3, 3 );
 
-                LeapUtilGL::drawGrid( LeapUtilGL::kPlane_XY, 20, 20 );
+                LeapUtilGL::drawQuad(LeapUtilGL::kStyle_Solid, LeapUtilGL::kPlane_XY);
+            }
+            
+            {
+                glColor3f( 0.929, 0.929, 0.929 );
+                
+                LeapUtilGL::GLMatrixScope gridMatrixScope;
+                
+                glTranslatef( 2.5f, 0.0f, 0.0f );
+                
+                glScalef( 5, 3, 3 );
+                
+                LeapUtilGL::drawQuad(LeapUtilGL::kStyle_Solid, LeapUtilGL::kPlane_YZ);
+            }
+            
+            {
+                glColor3f( 0.929, 0.929, 0.929 );
+                
+                LeapUtilGL::GLMatrixScope gridMatrixScope;
+                
+                glTranslatef( -2.5f, 0.0f, 0.0f );
+                
+                glScalef( 5, 3, 3 );
+                
+                LeapUtilGL::drawQuad(LeapUtilGL::kStyle_Solid, LeapUtilGL::kPlane_YZ);
             }
 
             {
+                
+                glColor3f( 0.52, 0.368, 0.258);
+                
                 LeapUtilGL::GLMatrixScope gridMatrixScope;
 
                 glTranslatef( 0, -1.5f, 0.0f );
 
-                glScalef( 3, 3, 3 );
+                glScalef( 5, 3, 3 );
 
-                LeapUtilGL::drawGrid( LeapUtilGL::kPlane_ZX, 20, 20 );
+                LeapUtilGL::drawQuad(LeapUtilGL::kStyle_Solid, LeapUtilGL::kPlane_ZX);
             }
         }
         
@@ -518,7 +545,7 @@ public:
     void updateTrace() {
         for (std::map<int32_t, std::list<Leap::Vector>>::iterator it = m_fingerTrace.begin(); it != m_fingerTrace.end(); it++)
         {
-            if ((*it).second.size() > 20) {
+            if ((*it).second.size() > 30) {
                 (*it).second.pop_front();
             }
         }
