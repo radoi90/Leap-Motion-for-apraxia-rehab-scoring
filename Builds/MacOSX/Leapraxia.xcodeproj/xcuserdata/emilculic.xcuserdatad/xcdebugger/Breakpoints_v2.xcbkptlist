@@ -25,7 +25,7 @@
                   symbolName = "LeapUtilGL::drawGrid(LeapUtilGL::ePlane, unsigned int, unsigned int)"
                   moduleName = "Leapraxia"
                   urlString = "file:///Users/emilculic/Documents/4th%20year%20project/LeapSDK/util/LeapUtilGL.cpp"
-                  timestampString = "411922267.889023"
+                  timestampString = "411951440.558473"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "76"
@@ -39,7 +39,7 @@
                   symbolName = "LeapUtilGL::drawGrid(LeapUtilGL::ePlane, unsigned int, unsigned int)"
                   moduleName = "Leapraxia"
                   urlString = "file:///Users/emilculic/Documents/4th%20year%20project/LeapSDK/util/LeapUtilGL.cpp"
-                  timestampString = "411922267.889395"
+                  timestampString = "411951440.558668"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "76"
@@ -110,6 +110,22 @@
             startingLineNumber = "85"
             endingLineNumber = "85"
             landmarkName = "drawGrid( ePlane plane, unsigned int horizSubdivs, unsigned int vertSubdivs )"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../../Source/Main.cpp"
+            timestampString = "411953637.079429"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "374"
+            endingLineNumber = "374"
+            landmarkName = "drawTrace()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

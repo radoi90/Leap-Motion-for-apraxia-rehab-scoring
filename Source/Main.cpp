@@ -140,6 +140,7 @@ public:
                     "Space       - Reset camera";
 
         m_strPrompt = "Press 'h' for help";
+        m_traceLength = 0;
         
         std::map<int32_t, std::list<Leap::Vector>> m_fingerTrace;
         std::map<int32_t, int64_t> lastUpdate;
@@ -193,7 +194,7 @@ public:
 
       if ( iKeyCode == KeyPress::upKey )
       {
-        m_camera.Move(Leap::Vector(0,0,-1)); // RotateOrbit( 0, 0, LeapUtil::kfHalfPi * -0.05f );
+        m_camera.RotateOrbit( 0, 0, LeapUtil::kfHalfPi * -0.05f );
         return true;
       }
 
@@ -219,6 +220,12 @@ public:
       {
       case ' ':
         resetCamera();
+        break;
+      case '[':
+        m_traceLength -= (m_traceLength > 0) ? 1 : 0;
+        break;
+      case ']':
+        m_traceLength += 1;
         break;
       case 'H':
         m_bShowHelp = !m_bShowHelp;
@@ -499,6 +506,30 @@ public:
 
                 LeapUtilGL::drawQuad(LeapUtilGL::kStyle_Solid, LeapUtilGL::kPlane_ZX);
             }
+            
+            {
+                glColor3f( 0.8, 0, 0);
+                
+                LeapUtilGL::GLMatrixScope gridMatrixScope;
+                
+                glTranslatef(-0.5f, -0.5f, 0.5f);
+                
+                glScalef(1.f, 2.f, 1.f);
+                
+                LeapUtilGL::drawCylinder(LeapUtilGL::kStyle_Solid, LeapUtilGL::kAxis_Y);
+            }
+            
+            {
+                glColor3f(0, 0.8, 0);
+                
+                LeapUtilGL::GLMatrixScope gridMatrixScope;
+                
+                glTranslatef(-.2f, 0, -1.5f);
+                
+                glScalef(.3f, .3f, .3f);
+                
+                LeapUtilGL::drawSphere(LeapUtilGL::kStyle_Solid);
+            }
         }
         
         addToTrace();
@@ -538,14 +569,14 @@ public:
             if (!m_fingerTrace[finger.id()].empty()) {
                 m_fingerTrace[finger.id()].pop_back();
             }
-            m_fingerTrace[finger.id()].push_back(finger.stabilizedTipPosition());
+            m_fingerTrace[finger.id()].push_back(finger.tipPosition());
         }
     }
     
     void updateTrace() {
         for (std::map<int32_t, std::list<Leap::Vector>>::iterator it = m_fingerTrace.begin(); it != m_fingerTrace.end(); it++)
         {
-            if ((*it).second.size() > 30) {
+            while ((*it).second.size() > m_traceLength) {
                 (*it).second.pop_front();
             }
         }
@@ -564,7 +595,7 @@ public:
         for ( size_t i = 0, e = fingers.count(); i < e; i++ )
         {
             const Leap::Finger&     finger      = fingers[i];
-            Leap::Vector            vStartPos   = m_mtxFrameTransform.transformPoint( finger.stabilizedTipPosition() * m_fFrameScale );
+            Leap::Vector            vStartPos   = m_mtxFrameTransform.transformPoint( finger.tipPosition() * m_fFrameScale );
             Leap::Vector            vEndPos     = m_mtxFrameTransform.transformDirection( finger.direction() ) * -0.25f;
             const uint32_t          colorIndex  = static_cast<uint32_t>(finger.id()) % kNumColors;
 
@@ -679,6 +710,7 @@ private:
     bool                        m_bShowHelp;
     bool                        m_bPaused;
     std::map<int32_t, std::list<Leap::Vector>> m_fingerTrace;
+    int                         m_traceLength;
     
     enum  { kNumColors = 256 };
     Leap::Vector            m_avColors[kNumColors];
